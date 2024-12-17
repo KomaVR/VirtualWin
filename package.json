@@ -1,0 +1,23 @@
+{
+  "name": "windows-vm",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vercel dev",
+    "build": "echo 'no build step required'"
+  },
+  "dependencies": {},
+  "vercel": {
+    "builds": [
+      {
+        "src": "public/index.html",
+        "use": "@vercel/static"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/public/index.html"
+      }
+    ]
+  }
+}
