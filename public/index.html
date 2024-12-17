@@ -37,7 +37,7 @@
     </style>
 </head>
 <body>
-    <h1>Browser-Based Windows VM</h1>
+    <h1>Windows 95 VM in Browser</h1>
     <canvas id="screen" width="640" height="400"></canvas>
     <button id="start-btn">Start VM</button>
 
@@ -52,13 +52,13 @@
             }
 
             emulator = new V86Starter({
-                wasm_path: "v86.wasm",
+                wasm_path: "v86.wasm", // Path to the WebAssembly file
                 memory_size: 64 * 1024 * 1024, // Allocate 64 MB of memory
-                vga_memory_size: 2 * 1024 * 1024, // VGA memory
-                screen_container: document.getElementById("screen"),
+                vga_memory_size: 2 * 1024 * 1024, // VGA memory size
+                screen_container: document.getElementById("screen"), // Canvas element
                 bios: { url: "seabios.bin" }, // BIOS file
-                hda: { url: "windows95.img" }, // Your Windows image file
-                autostart: true,
+                hda: { url: "windows95.img" }, // Windows 95 disk image
+                autostart: true, // Automatically start the VM
             });
 
             emulator.add_listener("emulator-ready", () => {
